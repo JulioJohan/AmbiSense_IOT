@@ -16,9 +16,9 @@
 ## Tabla de Software utilizado
 | Id | Software | Version | Tipo |
 |----|----------|---------|------|
-|    |          |         |      |
-|    |          |         |      |
-|    |          |         |      |
+| SF01 | Node- Red | v3.0.2 |      |
+| SF02 | MQTT | v3.1.0 |      |
+| SF03 | Python | v3.9.5 |      |
 
 
 
