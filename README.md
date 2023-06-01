@@ -25,9 +25,9 @@
 ## Tabla de historias de usuario
 | Id | Historia de usuario | Prioridad | Estimación | Como probarlo | Responsable |
 |----|---------------------|-----------|------------|---------------|-------------|
-|HU001|El usuario quiere que el despositivo  me proporcione una mezcla de refresco, bebida alcholica y agua mineral al presionar un solo botón | Debe, Puede, Podria, NO | 5 | El usuario deposita su vaso en el deposito y presiona el botón del dispositivo y este entrega la bebida mezclada | Itzel |
-|    |                     |           |            |               |             |
-|    |                     |           |            |               |             |
+|HU001| Como usuario, quiero poder monitorear la temperatura ambiente del espacio de trabajo de mis empleados en tiempo real para ajustar la climatización de manera eficiente y asegurar el confort de mis empleados| Debe | 4 | El usuario entra en LVGL dentro de la aplicación para poder navegar y monitorer la temperatura | ???? |
+| HU002   |  Como usuario, quiero poder supervisar la humedad relativa del aire del espacio de trabajo de mis empleados para controlar y evitar problemas de humedad, como el moho y la condensación excesiva.  |    Debe   |   4   | El usuario entra en LVGL dentro de la aplicación para poder navegar y monitorer la humedad | ??????  |
+| HU003 | Como usuario, quiero ser alertado inmediatamente si se detecta una fuga de gas o una concentración peligrosa del espacio de trabajo, para tomar medidas de seguridad y evitar accidentes.  |  Debe |   4   |  El usuario entra en LVGL dentro de la aplicación para poder navegar y checar si hay una fuga | ?????|
 
 ## Prototipo en dibujo
 - Coloca la fotografia de tu prototipo dibujado a lapiz
