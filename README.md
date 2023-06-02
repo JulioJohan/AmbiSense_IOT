@@ -26,7 +26,8 @@ El objetivo principal del proyecto de Sistema de Monitoreo Ambiental es diseñar
 | SF01 | Node- Red | v3.0.2 |  Software    |
 | SF02 | MQTT | v3.1.0 |   Libreria  |
 | SF03 | Python | v3.9.5 |   Lenguaje de programación  |
-
+| SF04 | Tinkercad | Actual |   Software  |
+| SF05 | Fritzing | v0.9.3 |   Software  |
 
 
 ## Tabla de historias de usuario
