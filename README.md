@@ -4,8 +4,10 @@
 
 
 ## Integrantes
-- Julio Johan 
-- Alejandro Guerrero
+- David Enrique Lopez Juarez
+- Julio Johan Jaramillo Mejia
+- Alejandro Rafael Guerrero Lozano
+- Izel Juliza Guerrero Rodriguez
 
 <!--Componentes electricos-->
 ## Hardware
