@@ -13,10 +13,10 @@ El objetivo principal del proyecto de Sistema de Monitoreo Ambiental es diseñar
 ## Hardware
 | Num.| Componente | Descripción | Imagen | Costo | Cantidad |
 |-----|------------|-------------|--------|-------|----------|
-|  1  | Sensor de temperatura y de humedad (ambos) |Mide la temperatura del entorno	|![imagen](https://cdn.shopify.com/s/files/1/1040/8806/products/photo_IC-20010_DHT11_DigitalTemperatureHumiditySensor_DHT11_01_700x700.png?v=1627344523)|  $140 | 2
-|  2  | Sensor de gas	 |Detecta la presencia de gases		|![imagen](https://uelectronics.com/wp-content/uploads/AR0221_MQ5-2-2.jpg)|  $140 | 2
-|  3  | Sensor de movimiento	| Detecta el movimiento en un área			|![imagen](https://epyelectronica.com/wp-content/uploads/2020/09/Sensor-de-Movimiento-PIR-HC-SR501.png)|  $100 | 2
-|  4  | Sensor de sonido	| Detecta el nivel de sonido en el entorno	|![imagen](https://aelectronics.com.mx/metepec/14-thickbox_default/sensor-de-sonido-modulo.jpg)|  $100 | 2
+|  1  | Sensor de temperatura y de humedad (ambos) (DHT11) |Mide la temperatura del entorno	|![imagen](https://cdn.shopify.com/s/files/1/1040/8806/products/photo_IC-20010_DHT11_DigitalTemperatureHumiditySensor_DHT11_01_700x700.png?v=1627344523)|  $140 | 2
+|  2  | Sensor de gas	(MQ-2) |Detecta la presencia de gases		|![imagen](https://uelectronics.com/wp-content/uploads/AR0221_MQ5-2-2.jpg)|  $140 | 2
+|  3  | Sensor de movimiento	(PIR) | Detecta el movimiento en un área			|![imagen](https://epyelectronica.com/wp-content/uploads/2020/09/Sensor-de-Movimiento-PIR-HC-SR501.png)|  $100 | 2
+|  4  | Sensor de sonido	(KY-038)| Detecta el nivel de sonido en el entorno	|![imagen](https://aelectronics.com.mx/metepec/14-thickbox_default/sensor-de-sonido-modulo.jpg)|  $100 | 2
 
 
 
