@@ -44,10 +44,16 @@ El objetivo principal del proyecto de Sistema de Monitoreo Ambiental es diseñar
 ![Carcasa del dispositivo para monitorear medidas](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/324cf8b0-4d27-4943-ab37-0e067d3ed931.jpeg)
 ![Carcasa del dispositivo del smarwatch ](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/d1cdfbf2-3c57-4323-a2b8-95e6568c3d88.jpeg)
 
-## Prototipo en Fitzing 
-
+## Prototipo en Fritzing 
+![image](https://github.com/JulioJohan/Social_Hub_IOT/assets/92689016/83f0b4f8-b656-4159-823b-e841490cf50c)
+Archivo para importa a Fritzing
+https://drive.google.com/file/d/1hTj0Yit1YV8chYnKZ-L4cELiSmPzCCmE/view?usp=sharing
 ## Placa PCB
-
+![image](https://github.com/JulioJohan/Social_Hub_IOT/assets/92689016/f1482343-17b9-444a-ac60-fee20b4c01d9)
+![image](https://github.com/JulioJohan/Social_Hub_IOT/assets/92689016/5de45c54-2eb1-4dfe-a9df-51f6a97b9d83)
+![image](https://github.com/JulioJohan/Social_Hub_IOT/assets/92689016/a8f1ee7b-cd9f-4f3d-9161-c0d63a9c7184)
+Archivo para importa a Fritzing
+https://drive.google.com/file/d/1hTj0Yit1YV8chYnKZ-L4cELiSmPzCCmE/view?usp=sharing
 ## Prototipo en 3D
 
 ![Carcasa del dispositivo para monitorear 3D](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/c4a88b76-bfaf-43d6-9086-7c03bc590762.jpeg)
