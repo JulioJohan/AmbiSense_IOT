@@ -41,6 +41,7 @@ El objetivo principal del proyecto de Sistema de Monitoreo Ambiental es diseñar
 
 ## Prototipo en dibujo
 - Coloca la fotografia de tu prototipo dibujado a lapiz
+https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sharing
 
 ## Prototipo en Fitzing 
 
