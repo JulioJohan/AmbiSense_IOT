@@ -53,5 +53,5 @@ El objetivo principal del proyecto de Sistema de Monitoreo Ambiental es diseñar
 ![Carcasa del dispositivo para monitorear 3D](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/c4a88b76-bfaf-43d6-9086-7c03bc590762.jpeg)
 ![Carcasa del dispositivo para smarwatch 3D](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/62b0dfc3-ee43-4020-9fa4-9f2033622546.jpeg)
 
-Archivos para importar en linkedin
+Archivos para importar en tinkercard
 https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sharing
