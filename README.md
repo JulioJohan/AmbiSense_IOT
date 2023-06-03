@@ -40,12 +40,14 @@ El objetivo principal del proyecto de Sistema de Monitoreo Ambiental es diseñar
 | HU005 | Como usuario, quiero supervisar los niveles de ruido  del espacio de trabajo de mis empleados para evaluar el ambiente sonoro y tomar acciones para reducir el ruido excesivo o identificar situaciones inusuales. Ademas de tener un control con los empleados|  Debe |   4   |  El usuario entra en LVGL dentro de la aplicación para poder navegar y checar si existe un ruedo excesivo |  David Enrique Lopez Juarez |
 
 ## Prototipo en dibujo
-- Coloca la fotografia de tu prototipo dibujado a lapiz
-https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sharing
+![Carcasa del dispositivo para monitorear](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/59b66046-de32-4683-b355-f47a140f9e83.jpeg)
+![Carcasa del dispositivo para monitorear medidas](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/324cf8b0-4d27-4943-ab37-0e067d3ed931.jpeg)
+![Carcasa del dispositivo del smarwatch ](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/d1cdfbf2-3c57-4323-a2b8-95e6568c3d88.jpeg)
 
 ## Prototipo en Fitzing 
 
 ## Placa PCB
 
 ## Prototipo en 3D
+
 https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sharing
