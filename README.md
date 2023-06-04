@@ -3,7 +3,7 @@
 ## Objetivo del proyecto
 El objetivo principal del proyecto de Sistema de Monitoreo Ambiental es diseñar y desarrollar un sistema que permita a los usuarios monitorear y controlar los diferentes parámetros ambientales en la oficina de manera eficiente y conveniente. El proyecto busca crear un entorno más saludable y confortable para los ocupantes, al tiempo que promueve la eficiencia energética y la sostenibilidad.
 
-##Beneficiario
+## Beneficiario
 Empresa ITTIVA (Isamar Ríos Bocanegra)
 
 ## Integrantes
