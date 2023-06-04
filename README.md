@@ -3,6 +3,9 @@
 ## Objetivo del proyecto
 El objetivo principal del proyecto de Sistema de Monitoreo Ambiental es diseñar y desarrollar un sistema que permita a los usuarios monitorear y controlar los diferentes parámetros ambientales en la oficina de manera eficiente y conveniente. El proyecto busca crear un entorno más saludable y confortable para los ocupantes, al tiempo que promueve la eficiencia energética y la sostenibilidad.
 
+##Beneficiario
+Empresa ITTIVA (Isamar Ríos Bocanegra)
+
 ## Integrantes
 - David Enrique Lopez Juarez
 - Julio Johan Jaramillo Mejia
@@ -47,6 +50,7 @@ El objetivo principal del proyecto de Sistema de Monitoreo Ambiental es diseñar
 | HU003 | Como usuario, quiero ser alertado inmediatamente si se detecta una fuga de gas o una concentración peligrosa del espacio de trabajo, para tomar medidas de seguridad y evitar accidentes.  |  Debe |   4   |  El usuario entra en LVGL dentro de la aplicación para poder navegar y checar si hay una fuga | David Enrique Lopez Juarez |
 | HU004 | Como usuario, quiero recibir alertas cuando se detecte movimiento en áreas específicas  del espacio de trabajo  mientras estoy ausente, para tomar medidas de seguridad y precaución. |  Debe |   4   |  El usuario entra en LVGL dentro de la aplicación para poder navegar y checar si hay un excesivo de movimiento |  Alejandro Rafael Guerrero Lozano |
 | HU005 | Como usuario, quiero supervisar los niveles de ruido  del espacio de trabajo de mis empleados para evaluar el ambiente sonoro y tomar acciones para reducir el ruido excesivo o identificar situaciones inusuales. Ademas de tener un control con los empleados|  Debe |   4   |  El usuario entra en LVGL dentro de la aplicación para poder navegar y checar si existe un ruedo excesivo |  David Enrique Lopez Juarez |
+| HU006 | Como usuario, quiero supervisar los niveles de luz del espacio de trabajo de mis empleados.|  Debe |   4   |  El usuario entra en LVGL dentro de la aplicación para poder navegar y checar los niveles de luz |  Alejandro Rafael Guerrero Lozano |
 
 ## Prototipo en dibujo
 ![Carcasa del dispositivo para monitorear](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/59b66046-de32-4683-b355-f47a140f9e83.jpeg)
@@ -61,8 +65,10 @@ https://drive.google.com/file/d/1hTj0Yit1YV8chYnKZ-L4cELiSmPzCCmE/view?usp=shari
 ![image](https://github.com/JulioJohan/Social_Hub_IOT/assets/92689016/f1482343-17b9-444a-ac60-fee20b4c01d9)
 ![image](https://github.com/JulioJohan/Social_Hub_IOT/assets/92689016/5de45c54-2eb1-4dfe-a9df-51f6a97b9d83)
 ![image](https://github.com/JulioJohan/Social_Hub_IOT/assets/92689016/a8f1ee7b-cd9f-4f3d-9161-c0d63a9c7184)
+
 Archivo para importa a Fritzing
 https://drive.google.com/file/d/1hTj0Yit1YV8chYnKZ-L4cELiSmPzCCmE/view?usp=sharing
+
 ## Prototipo en 3D
 
 ![Carcasa del dispositivo para monitorear 3D](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/c4a88b76-bfaf-43d6-9086-7c03bc590762.jpeg)
