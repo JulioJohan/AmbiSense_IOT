@@ -35,11 +35,15 @@ Empresa ITTIVA (Isamar Ríos Bocanegra)
 ## Tabla de Software utilizado
 | Id | Software | Version | Tipo |
 |----|----------|---------|------|
-| SF01 | Node- Red | v3.0.2 |  Software    |
-| SF02 | MQTT | v3.1.0 |   Libreria  |
+| SF01 | Node- Red | v3.0.2 |  Software Libre    |
+| SF02 | MQTT | v3.1.0 |   Libreria Libre |
 | SF03 | Python | v3.9.5 |   Lenguaje de programación  |
-| SF04 | Tinkercad | Actual |   Software  |
-| SF05 | Fritzing | v0.9.3 |   Software  |
+| SF04 | Tinkercad | Actual |   Software Libre |
+| SF05 | Fritzing | v0.9.3 |   Software  Libre|
+|SF06|DHT sensor library|v1.3.8|Libre|
+|SF07| Adafruit_DHT |v1.5.0|Libre|
+|SF08| Espressif (ESP32)| v7.7.1|Libre|
+
 
 
 ## Tabla de historias de usuario
