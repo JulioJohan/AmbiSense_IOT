@@ -58,6 +58,15 @@ Empresa ITTIVA (Isamar Ríos Bocanegra)
 |HU007| Como encargado de oficina, quiero poder controlar de forma remota la climatización del espacio de trabajo, ajustando la temperatura y la velocidad del ventilador, para garantizar la comodidad de mis empleados.|	Debe|	4	|El encargado de oficina entra en LVGL dentro de la aplicación para poder navegar y ajustar la configuración de la climatización, luego verifica si la temperatura y la velocidad del ventilador se ajustan correctamente.|Julio Johan Jaramillo Mejia|
 |HU008|	Como encargado de oficina, quiero tener la capacidad de programar horarios de encendido y apagado del sistema de climatización en el espacio de trabajo, para optimizar el consumo de energía.|	Debe	|4|	El encargado de oficina accede a la sección de configuración dentro de la aplicación y establece horarios específicos para el encendido y apagado del sistema de climatización.|	Itzel Juliza Guerrero Rodriguez|
 
+## Spring 01
+## Tabla de historias de usuario
+| Id | Historia de usuario | Prioridad | Estimación | Como probarlo | Responsable |
+|----|---------------------|-----------|------------|---------------|-------------|
+| HU001 | Como encargado de oficina, quiero poder monitorear la temperatura ambiente del espacio de trabajo de mis empleados en tiempo real para ajustar la climatización de manera eficiente y asegurar el confort de mis empleados| Debe | 4 | El encargado de oficina entra en LVGL dentro de la aplicación para poder navegar y monitorer la temperatura |  Julio Johan Jaramillo Mejia |
+| HU002 |  Como encargado de oficina, quiero poder supervisar la humedad relativa del aire del espacio de trabajo de mis empleados para controlar y evitar problemas de humedad, como el moho y la condensación excesiva.  |    Debe   |   4   | El encargado de oficina entra en LVGL dentro de la aplicación para poder navegar y monitorer la humedad |  Itzel Juliza Guerrero Rodriguez  |
+| HU003 | Como encargado de oficina, quiero ser alertado inmediatamente si se detecta una fuga de gas o una concentración peligrosa del espacio de trabajo, para tomar medidas de seguridad y evitar accidentes.  |  Debe |   4   |  El encargado de oficina entra en LVGL dentro de la aplicación para poder navegar y checar si hay una fuga | David Enrique Lopez Juarez |
+| HU004 | Como encargado de oficina, quiero recibir alertas cuando se detecte movimiento en áreas específicas  del espacio de trabajo  mientras estoy ausente, para tomar medidas de seguridad y precaución. |  Debe |   4   |  El encargado de oficina entra en LVGL dentro de la aplicación para poder navegar y checar si hay un excesivo de movimiento |  Alejandro Rafael Guerrero Lozano |
+
 ## Prototipo en dibujo
 ![Carcasa del dispositivo para monitorear](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/59b66046-de32-4683-b355-f47a140f9e83.jpeg)
 ![Carcasa del dispositivo para monitorear medidas](https://github.com/JulioJohan/Social_Hub_IOT/blob/main/324cf8b0-4d27-4943-ab37-0e067d3ed931.jpeg)
