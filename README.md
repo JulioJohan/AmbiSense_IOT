@@ -100,3 +100,16 @@ https://drive.google.com/file/d/1hTj0Yit1YV8chYnKZ-L4cELiSmPzCCmE/view?usp=shari
 
 Archivos para importar en tinkercard
 https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sharing
+
+# Prototipo Sprint 01
+
+## Imagenes del Prototipo
+
+## Imagen del Flow en Node Red
+
+## Imagen del dashbord de los datos 
+
+## Imagen de la base de datos 
+
+## Link del video de entregra
+
