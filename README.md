@@ -134,4 +134,4 @@ https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sha
 ### El codigo en Thonny se encuentra [aqui!!](https://github.com/JulioJohan/AmbiSense_IOT/tree/main/codigo_fuente)
 
 ## Link del video de entrega
-
+https://drive.google.com/file/d/1rlZxnhoWY8SfxPz0AuGmdlDEthi9edXA/view?usp=sharing
