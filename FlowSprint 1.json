@@ -1,0 +1,908 @@
+[
+    {
+        "id": "1931986b236ab1c3",
+        "type": "tab",
+        "label": "Sprint 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f3ae03fafb79214b",
+        "type": "mqtt in",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "topic": "utng/temp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "5d8aaf3731205803",
+                "fdcbb16e00502a85"
+            ]
+        ]
+    },
+    {
+        "id": "5d8aaf3731205803",
+        "type": "ui_gauge",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "group": "e057b4107c8c701f",
+        "order": 2,
+        "width": 7,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "-50",
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 690,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e70d3a0c3206e97d",
+        "type": "mysql",
+        "z": "1931986b236ab1c3",
+        "mydb": "a3c9484d6e83d520",
+        "name": "",
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "862cc78894145bd5"
+            ]
+        ]
+    },
+    {
+        "id": "fdcbb16e00502a85",
+        "type": "function",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "func": "const valor= msg.payload\n\nmsg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(2,1, '\" + valor + \"')\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 100,
+        "wires": [
+            [
+                "e70d3a0c3206e97d"
+            ]
+        ]
+    },
+    {
+        "id": "862cc78894145bd5",
+        "type": "debug",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "d956e16f20ed08b0",
+        "type": "mqtt in",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "topic": "utng/humedad",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "7ed0bfc120f0bdd1",
+                "bf76aa8efccdb988"
+            ]
+        ]
+    },
+    {
+        "id": "7ed0bfc120f0bdd1",
+        "type": "ui_gauge",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "group": "e057b4107c8c701f",
+        "order": 4,
+        "width": 7,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Humedad",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 640,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "bf76aa8efccdb988",
+        "type": "function",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "func": "const valor= msg.payload\n\nmsg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(3,1, '\" + valor + \"')\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 280,
+        "wires": [
+            [
+                "e70d3a0c3206e97d"
+            ]
+        ]
+    },
+    {
+        "id": "b196397a9f1fb2f2",
+        "type": "mqtt in",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "topic": "utng/pir",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 540,
+        "wires": [
+            [
+                "03d1cd993f729e89",
+                "c881dd7a9b0e6ce1"
+            ]
+        ]
+    },
+    {
+        "id": "03d1cd993f729e89",
+        "type": "debug",
+        "z": "1931986b236ab1c3",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "531a033ba11ce4de",
+        "type": "inject",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 60,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "df46c6a0a663cb62",
+        "type": "function",
+        "z": "1931986b236ab1c3",
+        "name": "SELECT",
+        "func": "msg.topic= \"SELECT * FROM sensor_data WHERE sensor='4';\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 740,
+        "wires": [
+            [
+                "62400b29d321e149"
+            ]
+        ]
+    },
+    {
+        "id": "c881dd7a9b0e6ce1",
+        "type": "function",
+        "z": "1931986b236ab1c3",
+        "name": "INSERT",
+        "func": "msg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(4,1,1)\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 600,
+        "wires": [
+            [
+                "f41b1d08226518d2"
+            ]
+        ]
+    },
+    {
+        "id": "f41b1d08226518d2",
+        "type": "mysql",
+        "z": "1931986b236ab1c3",
+        "mydb": "a3c9484d6e83d520",
+        "name": "Sensores",
+        "x": 580,
+        "y": 640,
+        "wires": [
+            [
+                "508b5781edac8e08",
+                "df46c6a0a663cb62"
+            ]
+        ]
+    },
+    {
+        "id": "508b5781edac8e08",
+        "type": "debug",
+        "z": "1931986b236ab1c3",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "98d58802f2e2a667",
+        "type": "function",
+        "z": "1931986b236ab1c3",
+        "name": "function 1",
+        "func": "//for (let index = 0; index < msg.payload.length; index++) {\n//    console.log(msg.payload[index]);\n//    \n//}\nmsg.payload = msg.payload.length;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 760,
+        "wires": [
+            [
+                "990cc0118fc7446b",
+                "f4fe4b7b5605e6a9"
+            ]
+        ]
+    },
+    {
+        "id": "990cc0118fc7446b",
+        "type": "debug",
+        "z": "1931986b236ab1c3",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "f4fe4b7b5605e6a9",
+        "type": "ui_chart",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "group": "e057b4107c8c701f",
+        "order": 22,
+        "width": 7,
+        "height": 5,
+        "label": "Detección",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 840,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62400b29d321e149",
+        "type": "mysql",
+        "z": "1931986b236ab1c3",
+        "mydb": "a3c9484d6e83d520",
+        "name": "Sensores",
+        "x": 420,
+        "y": 740,
+        "wires": [
+            [
+                "98d58802f2e2a667"
+            ]
+        ]
+    },
+    {
+        "id": "7cd4e0cf72c3e5de",
+        "type": "mqtt in",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "topic": "utng/gas",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 980,
+        "wires": [
+            [
+                "6e87b13b4a8bcca1",
+                "5086affa9837475b",
+                "9d9c463d236331d7"
+            ]
+        ]
+    },
+    {
+        "id": "6e87b13b4a8bcca1",
+        "type": "debug",
+        "z": "1931986b236ab1c3",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "5086affa9837475b",
+        "type": "ui_gauge",
+        "z": "1931986b236ab1c3",
+        "name": "",
+        "group": "e057b4107c8c701f",
+        "order": 20,
+        "width": 7,
+        "height": 4,
+        "gtype": "wave",
+        "title": "Gas",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 710,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "9d9c463d236331d7",
+        "type": "function",
+        "z": "1931986b236ab1c3",
+        "name": "INSERT",
+        "func": "msg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(9,1,1)\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1040,
+        "wires": [
+            [
+                "acd190ca2011dd8a"
+            ]
+        ]
+    },
+    {
+        "id": "acd190ca2011dd8a",
+        "type": "mysql",
+        "z": "1931986b236ab1c3",
+        "mydb": "a3c9484d6e83d520",
+        "name": "Sensores",
+        "x": 680,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d42de8f771a83d8",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 1,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "65a6e313b602e8ff",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 3,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "535ddfa5e0ac1306",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 5,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "62ee0c06eb64f00d",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 6,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "ae1ecb36e3717bd9",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 7,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "3b84d6334caf16ad",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 8,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "40f73ba9af155c9a",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 9,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "6ec5d94c5c6b26fa",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 10,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "fad0e2d2e98690e9",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 11,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "795dcfb99804f824",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 12,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "9e2fb53251cd9347",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 13,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "ce4a048d19fdb5de",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 14,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "67f6885fd8e07cf5",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 15,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "a09817a2cc1b7e80",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 16,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "5ad2d23c8b4f93f5",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 17,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "3b4863b6297d8b2f",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 18,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "e1b2d6650e4eccb7",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 19,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "9d66bd5142e74050",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 21,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "958d01099cafdf61",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 23,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "51ddf36d2e8519fe",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 24,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "c51dde22558a61aa",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 25,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "b6b15493193aa045",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 26,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "cab5200e09b11faa",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 27,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "17b1aa71e1c8a203",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 28,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "22ea29da18750202",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 29,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "1feb4e66aa1faa51",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 30,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "bd8cbaf726fc6e25",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 31,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "b1cf6068c59ee91e",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 32,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "61a8e1ba28fa7b94",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 33,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "f4ca4dea1b4765ed",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 34,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "b993633c90976741",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 36,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "77b1b3e8b2f28089",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 38,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "383791a491d2eb54",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 39,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "36f21687d175c7e0",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 40,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "2fbaed2ea3810222",
+        "type": "ui_spacer",
+        "z": "1931986b236ab1c3",
+        "name": "spacer",
+        "group": "e057b4107c8c701f",
+        "order": 41,
+        "width": 21,
+        "height": 1
+    },
+    {
+        "id": "5db198805f821e04",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e057b4107c8c701f",
+        "type": "ui_group",
+        "name": "MQTT",
+        "tab": "709542799f4da2f2",
+        "order": 1,
+        "disp": true,
+        "width": 27,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a3c9484d6e83d520",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "db02",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "709542799f4da2f2",
+        "type": "ui_tab",
+        "name": "Tab 3",
+        "icon": "dashboard",
+        "order": 3
+    }
+]
