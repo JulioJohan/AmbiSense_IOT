@@ -113,12 +113,25 @@ https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sha
 ![4](https://github.com/JulioJohan/AmbiSense_IOT/assets/92689016/045e1b42-2cc5-4c8d-bee0-e26b4276a2e8)
 
 ## Imagen del Flow en Node Red
+-FLOW SENSOR TE,PERATURA Y HUMEDAD
+![Imagen del Flow en Node Red ](https://github.com/JulioJohan/AmbiSense_IOT/assets/93070552/efebb6fd-f9a3-4269-9150-2cdfa0d7d422)
+
+-FLOW SENSOR PIR
+![Imagen del Flow en Node Red2](https://github.com/JulioJohan/AmbiSense_IOT/assets/93070552/ad0af5ed-0209-42a6-991e-4d1768e0b2fb)
+
+-FLOW SENSOR MQ-2
+![Imagen del Flow en Node Red3](https://github.com/JulioJohan/AmbiSense_IOT/assets/93070552/896edf55-dcd1-4b1b-95a0-bf00534f4326)
+
+### El flow del sprint 1 de node red se encuentra [aqui!!](https://github.com/JulioJohan/AmbiSense_IOT/blob/main/FlowSprint%201.json)
+
 
 ## Imagen del dashbord de los datos 
+![Captura de pantalla (18)](https://github.com/JulioJohan/AmbiSense_IOT/assets/93070552/62b13bea-5618-42bf-b670-753c25c0d419)
 
 ## Imagen de la base de datos 
 ![309314f5-c376-48cd-8354-6de4241f0023](https://github.com/JulioJohan/AmbiSense_IOT/assets/75770163/5d4f146f-34cb-4d5a-a544-eea4783a6870)
 
+### El codigo en Thonny se encuentra [aqui!!](https://github.com/JulioJohan/AmbiSense_IOT/tree/main/codigo_fuente)
 
-## Link del video de entregra
+## Link del video de entrega
 
