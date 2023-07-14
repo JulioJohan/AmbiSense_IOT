@@ -117,6 +117,8 @@ https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sha
 ## Imagen del dashbord de los datos 
 
 ## Imagen de la base de datos 
+![309314f5-c376-48cd-8354-6de4241f0023](https://github.com/JulioJohan/AmbiSense_IOT/assets/75770163/5d4f146f-34cb-4d5a-a544-eea4783a6870)
+
 
 ## Link del video de entregra
 
