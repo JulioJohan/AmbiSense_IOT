@@ -104,6 +104,13 @@ https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sha
 # Prototipo Sprint 01
 
 ## Imagenes del Prototipo
+![1](https://github.com/JulioJohan/AmbiSense_IOT/assets/92689016/a6c32c37-6646-4b62-8a90-36ae18193113)
+
+![2](https://github.com/JulioJohan/AmbiSense_IOT/assets/92689016/36a06c83-89f9-404a-b0c7-f0609cdcffd2)
+
+![3](https://github.com/JulioJohan/AmbiSense_IOT/assets/92689016/7f489379-6c4a-4075-ac73-d2df4c1e1522)
+
+![4](https://github.com/JulioJohan/AmbiSense_IOT/assets/92689016/045e1b42-2cc5-4c8d-bee0-e26b4276a2e8)
 
 ## Imagen del Flow en Node Red
 
