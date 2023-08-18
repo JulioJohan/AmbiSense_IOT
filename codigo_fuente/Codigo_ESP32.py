@@ -12,18 +12,14 @@ led = Pin(4, Pin.OUT)
 pir = Pin(18, Pin.IN)
 buzzer= Pin(23, Pin.OUT)
 
-
-
 # Configuración del pin del sensor MQ-2
 pin_sensor = Pin(35, Pin.IN)
+
 # Motor
 pin_motor = Pin(27, Pin.OUT)
 #LED RGB
-n = 256
-led_rojo = 23
-led_azul = 21
-neo_rojo = neopixel.NeoPixel(Pin(led_rojo), n)
-neo_azul = neopixel.NeoPixel(Pin(led_azul), n)
+neo_rojo = neopixel.NeoPixel(Pin(23), 256)
+neo_azul = neopixel.NeoPixel(Pin(21), 256)
 
 # Configuraciones de MQTT	
 MQTT_BROKER = "broker.hivemq.com"
