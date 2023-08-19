@@ -14,13 +14,13 @@ pin_digital = machine.ADC(machine.Pin(33))  # Cambiado a pin 27
 digital_resistencia_pin = machine.ADC(machine.Pin(34))  # Cambiado a pin 27
 
 # Configurar el pin del zumbador o altavoz como PWM
-buzzer_pin = machine.PWM(machine.Pin(22))
+buzzer_pin = machine.PWM(machine.Pin(23))
 
 # Pines y variables para PIR.
 motion = False
 led = Pin(4, Pin.OUT)
 pir = Pin(18, Pin.IN)
-buzzer= Pin(23, Pin.OUT)
+#buzzer= Pin(23, Pin.OUT)
 
 # Configuración del pin del sensor MQ-2
 pin_sensor = Pin(35, Pin.IN)
@@ -196,7 +196,7 @@ while True:
         temp = sensor_temp()
         hum = sensor_hum()
         publishTempHum(temp, hum)
-        time.sleep(4)
+        #time.sleep(4)
         valor = leer_sensor()
         publishGas(valor)
         sound = sensor_sound()
@@ -204,8 +204,9 @@ while True:
         print("Valor foto_resistencia",foto_resistencia)
         if motion:
             print("Movimiento detectado")
-            alerta_policia()
-            publish(motion)
+            play_tone(1000, 0.5)
+            #alerta_policia()
+            #publish(motion)
             print("Movimiento detenido")
             motion = False
     except Exception as e:
