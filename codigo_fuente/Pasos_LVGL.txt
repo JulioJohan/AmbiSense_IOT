@@ -1,0 +1,5 @@
+1. Descargar el dashboard de la aplicacion.
+
+2. Cambiar el tipo de placa
+
+3. Ejecutar el codigo ui.ino
