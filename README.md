@@ -113,7 +113,7 @@ https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sha
 ![4](https://github.com/JulioJohan/AmbiSense_IOT/assets/92689016/045e1b42-2cc5-4c8d-bee0-e26b4276a2e8)
 
 ## Imagen del Flow en Node Red
--FLOW SENSOR TE,PERATURA Y HUMEDAD
+-FLOW SENSOR TEMPERATURA Y HUMEDAD
 ![Imagen del Flow en Node Red ](https://github.com/JulioJohan/AmbiSense_IOT/assets/93070552/efebb6fd-f9a3-4269-9150-2cdfa0d7d422)
 
 -FLOW SENSOR PIR
@@ -137,4 +137,16 @@ https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sha
 https://drive.google.com/file/d/1rlZxnhoWY8SfxPz0AuGmdlDEthi9edXA/view?usp=sharing
 
 # Prototipo Sprint 02
-Imagenes del modelo 3D
+## Imagenes del modelo 3D
+
+
+## Imagenes del Prototipo
+
+## Imagen del Flow en Node Red
+
+## Imagen del dashbord de los datos 
+
+### El codigo en Thonny se encuentra [aqui!!](https://github.com/JulioJohan/AmbiSense_IOT/tree/main/codigo_fuente)
+
+
+## Link del video de entrega
