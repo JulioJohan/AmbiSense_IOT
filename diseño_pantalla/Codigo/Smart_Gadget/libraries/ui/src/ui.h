@@ -61,6 +61,8 @@ extern lv_obj_t * ui_ValorTemperatura;
 extern lv_obj_t * ui_ValorSonido;
 extern lv_obj_t * ui_ValorLuz;
 extern lv_obj_t * ui_ValorHumedad;
+extern lv_obj_t * ui_Label26;
+extern lv_obj_t * ui_ValorGas;
 // SCREEN: ui_Call
 void ui_Call_screen_init(void);
 void ui_event_Call(lv_event_t * e);
@@ -113,11 +115,18 @@ void ui_event_Button13(lv_event_t * e);
 extern lv_obj_t * ui_Button13;
 extern lv_obj_t * ui_btnGraficaLuz;
 extern lv_obj_t * ui_Label13;
+extern lv_obj_t * ui_Image17;
+void ui_event_btnGas(lv_event_t * e);
+extern lv_obj_t * ui_btnGas;
+extern lv_obj_t * ui_Image18;
 // SCREEN: ui_panelHumedad
 void ui_panelHumedad_screen_init(void);
 void ui_event_panelHumedad(lv_event_t * e);
 extern lv_obj_t * ui_panelHumedad;
 extern lv_obj_t * ui_gfcHumedad;
+void ui_event_btnGas1(lv_event_t * e);
+extern lv_obj_t * ui_btnGas1;
+extern lv_obj_t * ui_Image19;
 void ui_event_Button10(lv_event_t * e);
 extern lv_obj_t * ui_Button10;
 extern lv_obj_t * ui_Label14;
@@ -145,6 +154,9 @@ void ui_panelSonido_screen_init(void);
 void ui_event_panelSonido(lv_event_t * e);
 extern lv_obj_t * ui_panelSonido;
 extern lv_obj_t * ui_gfcSonido;
+void ui_event_btnGas2(lv_event_t * e);
+extern lv_obj_t * ui_btnGas2;
+extern lv_obj_t * ui_Image20;
 void ui_event_Button15(lv_event_t * e);
 extern lv_obj_t * ui_Button15;
 extern lv_obj_t * ui_Label18;
@@ -172,6 +184,9 @@ void ui_panelLuz_screen_init(void);
 void ui_event_panelLuz(lv_event_t * e);
 extern lv_obj_t * ui_panelLuz;
 extern lv_obj_t * ui_gfcLuz;
+void ui_event_btnGas3(lv_event_t * e);
+extern lv_obj_t * ui_btnGas3;
+extern lv_obj_t * ui_Image21;
 void ui_event_Button19(lv_event_t * e);
 extern lv_obj_t * ui_Button19;
 extern lv_obj_t * ui_Label22;
@@ -194,6 +209,36 @@ void ui_event_Button22(lv_event_t * e);
 extern lv_obj_t * ui_Button22;
 extern lv_obj_t * ui_btnGraficaLuz3;
 extern lv_obj_t * ui_Label25;
+// SCREEN: ui_panelGas
+void ui_panelGas_screen_init(void);
+void ui_event_panelGas(lv_event_t * e);
+extern lv_obj_t * ui_panelGas;
+extern lv_obj_t * ui_gfcGas;
+void ui_event_btnGas4(lv_event_t * e);
+extern lv_obj_t * ui_btnGas4;
+extern lv_obj_t * ui_Image22;
+void ui_event_Button23(lv_event_t * e);
+extern lv_obj_t * ui_Button23;
+extern lv_obj_t * ui_Label27;
+void ui_event_Button24(lv_event_t * e);
+extern lv_obj_t * ui_Button24;
+extern lv_obj_t * ui_Label28;
+void ui_event_Button25(lv_event_t * e);
+extern lv_obj_t * ui_Button25;
+extern lv_obj_t * ui_Label29;
+void ui_event_btnGraficaTemperatura4(lv_event_t * e);
+extern lv_obj_t * ui_btnGraficaTemperatura4;
+extern lv_obj_t * ui_Image14;
+void ui_event_btnGraficaHumedad4(lv_event_t * e);
+extern lv_obj_t * ui_btnGraficaHumedad4;
+extern lv_obj_t * ui_Image15;
+void ui_event_btnGraficaSonido4(lv_event_t * e);
+extern lv_obj_t * ui_btnGraficaSonido4;
+extern lv_obj_t * ui_Image16;
+void ui_event_Button26(lv_event_t * e);
+extern lv_obj_t * ui_Button26;
+extern lv_obj_t * ui_btnGraficaLuz4;
+extern lv_obj_t * ui_Label30;
 extern lv_obj_t * ui____initial_actions0;
 
 LV_IMG_DECLARE(ui_img_ventilador__1png_png);    // assets\ventilador._1png.png
@@ -203,6 +248,7 @@ LV_IMG_DECLARE(ui_img_728093_png);    // assets\728093.png
 LV_IMG_DECLARE(ui_img_sound_png26_png);    // assets\sound_PNG26.png
 LV_IMG_DECLARE(
     ui_img_1466347900);    // assets\png-transparent-lightbulb-icon-incandescent-light-bulb-computer-icons-idea-silhouette-light-black-and-white.png
+LV_IMG_DECLARE(ui_img_1410985035);    // assets\gas-icon-clipart.png
 
 LV_FONT_DECLARE(ui_font_Number);
 

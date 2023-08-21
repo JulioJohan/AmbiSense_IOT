@@ -15,8 +15,8 @@ void ui_Clock_screen_init(void)
     ui_Panel1 = lv_obj_create(ui_Clock);
     lv_obj_set_width(ui_Panel1, 317);
     lv_obj_set_height(ui_Panel1, 237);
-    lv_obj_set_x(ui_Panel1, 1);
-    lv_obj_set_y(ui_Panel1, -2);
+    lv_obj_set_x(ui_Panel1, 0);
+    lv_obj_set_y(ui_Panel1, 1);
     lv_obj_set_align(ui_Panel1, LV_ALIGN_CENTER);
     lv_obj_clear_flag(ui_Panel1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
@@ -24,15 +24,15 @@ void ui_Clock_screen_init(void)
     lv_obj_set_width(ui_Label1, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label1, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label1, -100);
-    lv_obj_set_y(ui_Label1, -21);
+    lv_obj_set_y(ui_Label1, -24);
     lv_obj_set_align(ui_Label1, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Label1, "Temperatura");
 
     ui_Humedad = lv_label_create(ui_Clock);
     lv_obj_set_width(ui_Humedad, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Humedad, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Humedad, -110);
-    lv_obj_set_y(ui_Humedad, 15);
+    lv_obj_set_x(ui_Humedad, -108);
+    lv_obj_set_y(ui_Humedad, 6);
     lv_obj_set_align(ui_Humedad, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Humedad, "Humedad");
 
@@ -40,15 +40,15 @@ void ui_Clock_screen_init(void)
     lv_obj_set_width(ui_Label2, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label2, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label2, -119);
-    lv_obj_set_y(ui_Label2, 48);
+    lv_obj_set_y(ui_Label2, 40);
     lv_obj_set_align(ui_Label2, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Label2, "Sonido");
 
     ui_Label3 = lv_label_create(ui_Clock);
     lv_obj_set_width(ui_Label3, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label3, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label3, -130);
-    lv_obj_set_y(ui_Label3, 82);
+    lv_obj_set_x(ui_Label3, -129);
+    lv_obj_set_y(ui_Label3, 71);
     lv_obj_set_align(ui_Label3, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Label3, "Luz");
 
@@ -143,7 +143,7 @@ void ui_Clock_screen_init(void)
     lv_obj_set_width(ui_ValorSonido, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_ValorSonido, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_ValorSonido, 37);
-    lv_obj_set_y(ui_ValorSonido, 44);
+    lv_obj_set_y(ui_ValorSonido, 40);
     lv_obj_set_align(ui_ValorSonido, LV_ALIGN_CENTER);
     lv_label_set_text(ui_ValorSonido, "0");
 
@@ -151,7 +151,7 @@ void ui_Clock_screen_init(void)
     lv_obj_set_width(ui_ValorLuz, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_ValorLuz, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_ValorLuz, 36);
-    lv_obj_set_y(ui_ValorLuz, 76);
+    lv_obj_set_y(ui_ValorLuz, 70);
     lv_obj_set_align(ui_ValorLuz, LV_ALIGN_CENTER);
     lv_label_set_text(ui_ValorLuz, "0");
 
@@ -159,9 +159,25 @@ void ui_Clock_screen_init(void)
     lv_obj_set_width(ui_ValorHumedad, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_ValorHumedad, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_ValorHumedad, 36);
-    lv_obj_set_y(ui_ValorHumedad, 10);
+    lv_obj_set_y(ui_ValorHumedad, 9);
     lv_obj_set_align(ui_ValorHumedad, LV_ALIGN_CENTER);
     lv_label_set_text(ui_ValorHumedad, "0");
+
+    ui_Label26 = lv_label_create(ui_Clock);
+    lv_obj_set_width(ui_Label26, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label26, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label26, -129);
+    lv_obj_set_y(ui_Label26, 102);
+    lv_obj_set_align(ui_Label26, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label26, "Gas");
+
+    ui_ValorGas = lv_label_create(ui_Clock);
+    lv_obj_set_width(ui_ValorGas, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_ValorGas, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_ValorGas, 36);
+    lv_obj_set_y(ui_ValorGas, 101);
+    lv_obj_set_align(ui_ValorGas, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_ValorGas, "0");
 
     lv_obj_add_event_cb(ui_Button1, ui_event_Button1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button2, ui_event_Button2, LV_EVENT_ALL, NULL);

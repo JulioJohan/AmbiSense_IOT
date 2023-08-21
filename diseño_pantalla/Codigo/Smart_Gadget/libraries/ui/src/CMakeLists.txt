@@ -10,6 +10,7 @@ SET(SOURCES components/ui_comp_alarm_comp.c
     screens/ui_panelHumedad.c
     screens/ui_panelSonido.c
     screens/ui_panelLuz.c
+    screens/ui_panelGas.c
     ui.c
     components/ui_comp_hook.c
     ui_helpers.c
@@ -20,6 +21,7 @@ SET(SOURCES components/ui_comp_alarm_comp.c
     images/ui_img_728093_png.c
     images/ui_img_sound_png26_png.c
     images/ui_img_1466347900.c
+    images/ui_img_1410985035.c
     fonts/ui_font_Number.c)
 
 add_library(ui ${SOURCES})

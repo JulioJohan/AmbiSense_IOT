@@ -39,11 +39,39 @@ void ui_panelHumedad_screen_init(void)
     lv_obj_set_style_line_color(ui_gfcHumedad, lv_color_hex(0xDADADA), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_line_opa(ui_gfcHumedad, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_btnGas1 = lv_btn_create(ui_panelHumedad);
+    lv_obj_set_width(ui_btnGas1, 29);
+    lv_obj_set_height(ui_btnGas1, 31);
+    lv_obj_set_x(ui_btnGas1, -132);
+    lv_obj_set_y(ui_btnGas1, -51);
+    lv_obj_set_align(ui_btnGas1, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_btnGas1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_btnGas1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_radius(ui_btnGas1, 5, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_btnGas1, lv_color_hex(0x0B3E8E), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_btnGas1, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_color(ui_btnGas1, lv_color_hex(0xEEBFBF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui_btnGas1, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_btnGas1, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui_btnGas1, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui_btnGas1, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui_btnGas1, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_decor(ui_btnGas1, LV_TEXT_DECOR_NONE, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_btnGas1, &lv_font_montserrat_16, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Image19 = lv_img_create(ui_btnGas1);
+    lv_img_set_src(ui_Image19, &ui_img_1410985035);
+    lv_obj_set_width(ui_Image19, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Image19, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Image19, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Image19, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    lv_obj_clear_flag(ui_Image19, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
     ui_Button10 = lv_btn_create(ui_panelHumedad);
     lv_obj_set_width(ui_Button10, 76);
     lv_obj_set_height(ui_Button10, 27);
-    lv_obj_set_x(ui_Button10, -106);
-    lv_obj_set_y(ui_Button10, -83);
+    lv_obj_set_x(ui_Button10, -109);
+    lv_obj_set_y(ui_Button10, -96);
     lv_obj_set_align(ui_Button10, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Button10, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button10, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -68,8 +96,8 @@ void ui_panelHumedad_screen_init(void)
     ui_Button11 = lv_btn_create(ui_panelHumedad);
     lv_obj_set_width(ui_Button11, 89);
     lv_obj_set_height(ui_Button11, 27);
-    lv_obj_set_x(ui_Button11, -6);
-    lv_obj_set_y(ui_Button11, -84);
+    lv_obj_set_x(ui_Button11, -7);
+    lv_obj_set_y(ui_Button11, -96);
     lv_obj_set_align(ui_Button11, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Button11, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button11, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -94,8 +122,8 @@ void ui_panelHumedad_screen_init(void)
     ui_Button12 = lv_btn_create(ui_panelHumedad);
     lv_obj_set_width(ui_Button12, 76);
     lv_obj_set_height(ui_Button12, 27);
-    lv_obj_set_x(ui_Button12, 91);
-    lv_obj_set_y(ui_Button12, -86);
+    lv_obj_set_x(ui_Button12, 97);
+    lv_obj_set_y(ui_Button12, -97);
     lv_obj_set_align(ui_Button12, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Button12, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button12, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -120,8 +148,8 @@ void ui_panelHumedad_screen_init(void)
     ui_btnGraficaTemperatura1 = lv_btn_create(ui_panelHumedad);
     lv_obj_set_width(ui_btnGraficaTemperatura1, 29);
     lv_obj_set_height(ui_btnGraficaTemperatura1, 31);
-    lv_obj_set_x(ui_btnGraficaTemperatura1, -134);
-    lv_obj_set_y(ui_btnGraficaTemperatura1, -32);
+    lv_obj_set_x(ui_btnGraficaTemperatura1, -133);
+    lv_obj_set_y(ui_btnGraficaTemperatura1, -15);
     lv_obj_set_align(ui_btnGraficaTemperatura1, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_btnGraficaTemperatura1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_btnGraficaTemperatura1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -149,7 +177,7 @@ void ui_panelHumedad_screen_init(void)
     lv_obj_set_width(ui_btnGraficaHumedad1, 29);
     lv_obj_set_height(ui_btnGraficaHumedad1, 27);
     lv_obj_set_x(ui_btnGraficaHumedad1, -133);
-    lv_obj_set_y(ui_btnGraficaHumedad1, 8);
+    lv_obj_set_y(ui_btnGraficaHumedad1, 25);
     lv_obj_set_align(ui_btnGraficaHumedad1, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_btnGraficaHumedad1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_btnGraficaHumedad1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -177,7 +205,7 @@ void ui_panelHumedad_screen_init(void)
     lv_obj_set_width(ui_btnGraficaSonido1, 29);
     lv_obj_set_height(ui_btnGraficaSonido1, 27);
     lv_obj_set_x(ui_btnGraficaSonido1, -132);
-    lv_obj_set_y(ui_btnGraficaSonido1, 46);
+    lv_obj_set_y(ui_btnGraficaSonido1, 60);
     lv_obj_set_align(ui_btnGraficaSonido1, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_btnGraficaSonido1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_btnGraficaSonido1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -204,8 +232,8 @@ void ui_panelHumedad_screen_init(void)
     ui_Button14 = lv_btn_create(ui_panelHumedad);
     lv_obj_set_width(ui_Button14, 29);
     lv_obj_set_height(ui_Button14, 31);
-    lv_obj_set_x(ui_Button14, -130);
-    lv_obj_set_y(ui_Button14, 84);
+    lv_obj_set_x(ui_Button14, -132);
+    lv_obj_set_y(ui_Button14, 99);
     lv_obj_set_align(ui_Button14, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Button14, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_Button14, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -238,6 +266,7 @@ void ui_panelHumedad_screen_init(void)
     lv_label_set_text(ui_Label17, "Humedad");
     lv_obj_set_style_text_font(ui_Label17, &lv_font_montserrat_16, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    lv_obj_add_event_cb(ui_btnGas1, ui_event_btnGas1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button10, ui_event_Button10, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button11, ui_event_Button11, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button12, ui_event_Button12, LV_EVENT_ALL, NULL);
