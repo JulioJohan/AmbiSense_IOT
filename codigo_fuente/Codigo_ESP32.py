@@ -42,7 +42,7 @@ MQTT_TOPIC_3 = "utng/temp"
 MQTT_TOPIC_4 = "utng/humedad"
 MQTT_TOPIC_5 = "utng/sonido"
 MQTT_TOPIC_6 = "utng/fotoresistencia"
-MQTT_TOPIC_6 = "sd/ventilador"
+MQTT_TOPIC_7 = "utng/ventilador"
 
 
 MQTT_PORT = 1883
@@ -225,6 +225,8 @@ while True:
         sound = sensor_sound()
         print("Sonido",sound)
         foto_resistencia = sensor_foto_resistencia()
+        publishSound(sound)
+        publishFotoResistencia(foto_resistencia)
         print("Valor foto_resistencia",foto_resistencia)
         if motion:
             print("Movimiento detectado")
