@@ -137,8 +137,8 @@ https://drive.google.com/drive/folders/17Y6I6Qh2MGuPxudXHm-QEi41wmYJhm28?usp=sha
 https://drive.google.com/file/d/1rlZxnhoWY8SfxPz0AuGmdlDEthi9edXA/view?usp=sharing
 
 # Prototipo Sprint 02
-## Imagenes del modelo 3D
-
+## Link del modelo 3D
+https://drive.google.com/drive/folders/1T0H5iZNlcZtDxJmRIzmrZaTBnFTxkKrn?usp=sharing
 
 ## Imagenes del Prototipo
 
