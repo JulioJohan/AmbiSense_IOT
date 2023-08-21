@@ -14,7 +14,7 @@ pin_digital = machine.ADC(machine.Pin(33))  # Cambiado a pin 27
 digital_resistencia_pin = machine.ADC(machine.Pin(34))  # Cambiado a pin 27
 
 # Configurar el pin del zumbador o altavoz como PWM
-buzzer_pin = machine.PWM(machine.Pin(23))
+buzzer_pin = machine.PWM(machine.Pin(22))
 
 # Pines y variables para PIR.
 motion = False
@@ -42,6 +42,7 @@ MQTT_TOPIC_3 = "utng/temp"
 MQTT_TOPIC_4 = "utng/humedad"
 MQTT_TOPIC_5 = "utng/sonido"
 MQTT_TOPIC_6 = "utng/fotoresistencia"
+MQTT_TOPIC_6 = "sd/ventilador"
 
 
 MQTT_PORT = 1883
@@ -51,6 +52,14 @@ MQTT_PORT = 1883
 def sensor_temp():
     sensor.measure()
     temp = sensor.temperature()
+    if temp >= 35:
+        publish_tem(1)
+    elif temp >= 30:
+        publish_tem(2)
+    elif temp >= 26:
+        publish_tem(3)
+    else:
+        publish_tem(0)
     print("temperatura",temp)
     return round(temp,1)
 
@@ -84,7 +93,10 @@ def sensor_foto_resistencia():
     digital_value = digital_resistencia_pin.read() 
     # Imprime los valores
     print("Valor digital:", digital_value)
-
+    if digital_value >=4000:
+        led.value(1)
+    else:
+        led.value(0)
     time.sleep(1)  # Espera 1 segund
     
     return str(digital_value)
@@ -165,6 +177,15 @@ def publishFotoResistencia(foto_resistencia):
     print("FotoResistencia:", foto_resistencia)
     client.disconnect() 
 
+#Controlar ventilador
+def publish_tem(estado):
+    client = MQTTClient(MQTT_CLIENT_ID, MQTT_BROKER, port=MQTT_PORT, user=MQTT_USER, password=MQTT_PASSWORD, keepalive=30)
+    client.connect()
+    print("[OK]")
+    client.publish(MQTT_TOPIC_6, str(estado))
+    print("Ventilador a:", estado)
+    client.disconnect()
+    
 def alerta_policia():
     for i in range(5):
         for i in range(n):
@@ -185,12 +206,14 @@ def alerta_policia():
 
 pir.irq(trigger=Pin.IRQ_RISING, handler=handle_interrupt)
 
+play_tone(0, 0.5)
+
 # Programa principal
 wifi_connect()
 #Temperatura y Humedad
 sensor = dht.DHT11(Pin(5))
 
-
+  
 while True:
     try:
         temp = sensor_temp()
@@ -200,6 +223,7 @@ while True:
         valor = leer_sensor()
         publishGas(valor)
         sound = sensor_sound()
+        print("Sonido",sound)
         foto_resistencia = sensor_foto_resistencia()
         print("Valor foto_resistencia",foto_resistencia)
         if motion:
