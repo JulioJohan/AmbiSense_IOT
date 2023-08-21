@@ -9,7 +9,7 @@
 
 //Wifi setting
 const char* ssid = "POCO X3 Pro";
-const char* password = "12345678.";
+const char* password = "12345678";
 
 WiFiClient espClient;
 
@@ -189,12 +189,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
         // Actualiza el gráfico con los nuevos valores
         lv_chart_set_ext_y_array(ui_gfcSonido, ui_gfcSonido_series_1, ui_gfcSonido_series_1_array);
     } else if (strcmp(topic, MQTT_TOPIC_6) == 0) {
-        int comparacion = strcmp(mensaje, "1");
-        if (comparacion == 0) {
-            lv_label_set_text(ui_ValorLuz, "Alto");
-        } else {
-            lv_label_set_text(ui_ValorLuz, "Bajo");
-        }
+        lv_label_set_text(ui_ValorLuz, mensaje);
+
         for (int i = 0; i < MAX_VALUES; i++) {
             if (ui_gfcLuz_series_1_array[i] == 0) {
                 ui_gfcLuz_series_1_array[i] = atoi(mensaje);  // Suponiendo que el mensaje es numérico
