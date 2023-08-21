@@ -22,6 +22,14 @@ const char* clientID = "";
 
 PubSubClient client(espClient);
 
+//MQTT
+const char* MQTT_TOPIC_1 = "utng/pir";
+const char* MQTT_TOPIC_2 = "utng/gas";
+const char* MQTT_TOPIC_3 = "utng/temp";
+const char* MQTT_TOPIC_4 = "utng/humedad";
+const char* MQTT_TOPIC_5 = "utng/sonido";
+const char* MQTT_TOPIC_6 = "utng/fotoresistencia";
+
 /*Change to your screen resolution*/
 static const uint16_t screenWidth  = 320;//480;
 static const uint16_t screenHeight = 240;//320;
@@ -112,12 +120,117 @@ void setup_wifi() {
     Serial.println("Dirección IP: " + WiFi.localIP().toString());
 }
 
+//Cambiar de lugar
+#define MAX_VALUES 50  // Define el máximo de valores que deseas manejar
+#define MAX_VALUES_BEFORE_CLEAR 10  // Define la cantidad de veces antes de limpiar
+
+static lv_coord_t ui_gfcTemperatura_series_1_array[MAX_VALUES];
+static uint8_t times_temperatura_values_added = 0;
+
+static lv_coord_t ui_gfcSonido_series_1_array[MAX_VALUES];
+static uint8_t times_sonido_values_added = 0;
+
+static lv_coord_t ui_gfcLuz_series_1_array[MAX_VALUES];
+static uint8_t times_luz_values_added = 0;
+
+static lv_coord_t ui_gfcHumedad_series_1_array[MAX_VALUES];
+static uint8_t times_humedad_values_added = 0;
+
 void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print("Mensaje recibido en el tema: ");
     Serial.println("sd/ventilador");
     Serial.print("Contenido del mensaje: ");
+    char mensaje[256];  // Tamaño suficientemente grande para el mensaje
+    memset(mensaje, 0, sizeof(mensaje)); // Inicializa el arreglo con ceros
     for (int i = 0; i < length; i++) {
         Serial.print((char)payload[i]);
+        mensaje[i] = (char)payload[i]; // Concatenar el carácter al mensaje
+    } 
+
+    if (strcmp(topic, MQTT_TOPIC_3) == 0) {
+        // Actualiza un elemento de interfaz de usuario con el mensaje del tema 1
+        lv_label_set_text(ui_ValorTemperatura, mensaje);
+         // Agrega el nuevo valor al array (sin límite)
+        for (int i = 0; i < MAX_VALUES; i++) {
+            if (ui_gfcTemperatura_series_1_array[i] == 0) {
+                ui_gfcTemperatura_series_1_array[i] = atoi(mensaje);  // Suponiendo que el mensaje es numérico
+                break;  // Sal del bucle al agregar el valor
+            }
+        }
+        // Aumenta el contador de valores agregados
+        times_temperatura_values_added++;
+        // Cuando se agreguen 10 valores, limpia el array y reinicia el contador
+        if (times_temperatura_values_added >= MAX_VALUES_BEFORE_CLEAR) {
+            memset(ui_gfcTemperatura_series_1_array, 0, sizeof(ui_gfcTemperatura_series_1_array));
+            times_temperatura_values_added = 0;
+        }
+        lv_chart_series_t * ui_gfcTemperatura_series_1 = lv_chart_add_series(ui_gfcTemperatura, lv_color_hex(0x808080),
+                                                                         LV_CHART_AXIS_PRIMARY_Y);
+        // Actualiza el gráfico con los nuevos valores
+        lv_chart_set_ext_y_array(ui_gfcTemperatura, ui_gfcTemperatura_series_1, ui_gfcTemperatura_series_1_array);
+    } else if (strcmp(topic, MQTT_TOPIC_5) == 0) {
+        lv_label_set_text(ui_ValorSonido, mensaje);
+        // Agrega el nuevo valor al array (sin límite)
+        for (int i = 0; i < MAX_VALUES; i++) {
+            if (ui_gfcSonido_series_1_array[i] == 0) {
+                ui_gfcSonido_series_1_array[i] = atoi(mensaje);  // Suponiendo que el mensaje es numérico
+                break;  // Sal del bucle al agregar el valor
+            }
+        }
+        // Aumenta el contador de valores agregados
+        times_sonido_values_added++;
+        // Cuando se agreguen 10 valores, limpia el array y reinicia el contador
+        if (times_sonido_values_added >= MAX_VALUES_BEFORE_CLEAR) {
+            memset(ui_gfcSonido_series_1_array, 0, sizeof(ui_gfcSonido_series_1_array));
+            times_sonido_values_added = 0;
+        }
+        lv_chart_series_t * ui_gfcSonido_series_1 = lv_chart_add_series(ui_gfcSonido, lv_color_hex(0x808080),
+                                                                         LV_CHART_AXIS_PRIMARY_Y);
+        // Actualiza el gráfico con los nuevos valores
+        lv_chart_set_ext_y_array(ui_gfcSonido, ui_gfcSonido_series_1, ui_gfcSonido_series_1_array);
+    } else if (strcmp(topic, MQTT_TOPIC_6) == 0) {
+        int comparacion = strcmp(mensaje, "1");
+        if (comparacion == 0) {
+            lv_label_set_text(ui_ValorLuz, "Alto");
+        } else {
+            lv_label_set_text(ui_ValorLuz, "Bajo");
+        }
+        for (int i = 0; i < MAX_VALUES; i++) {
+            if (ui_gfcLuz_series_1_array[i] == 0) {
+                ui_gfcLuz_series_1_array[i] = atoi(mensaje);  // Suponiendo que el mensaje es numérico
+                break;  // Sal del bucle al agregar el valor
+            }
+        }
+        // Aumenta el contador de valores agregados
+        times_luz_values_added++;
+        // Cuando se agreguen 10 valores, limpia el array y reinicia el contador
+        if (times_luz_values_added >= MAX_VALUES_BEFORE_CLEAR) {
+            memset(ui_gfcLuz_series_1_array, 0, sizeof(ui_gfcLuz_series_1_array));
+            times_luz_values_added = 0;
+        }
+        lv_chart_series_t * ui_gfcLuz_series_1 = lv_chart_add_series(ui_gfcLuz, lv_color_hex(0x808080),
+                                                                         LV_CHART_AXIS_PRIMARY_Y);
+        // Actualiza el gráfico con los nuevos valores
+        lv_chart_set_ext_y_array(ui_gfcLuz, ui_gfcLuz_series_1, ui_gfcLuz_series_1_array);
+    }else if (strcmp(topic, MQTT_TOPIC_4) == 0) {
+        lv_label_set_text(ui_ValorHumedad, mensaje);
+        for (int i = 0; i < MAX_VALUES; i++) {
+            if (ui_gfcHumedad_series_1_array[i] == 0) {
+                ui_gfcHumedad_series_1_array[i] = atoi(mensaje);  // Suponiendo que el mensaje es numérico
+                break;  // Sal del bucle al agregar el valor
+            }
+        }
+        // Aumenta el contador de valores agregados
+        times_humedad_values_added++;
+        // Cuando se agreguen 10 valores, limpia el array y reinicia el contador
+        if (times_humedad_values_added >= MAX_VALUES_BEFORE_CLEAR) {
+            memset(ui_gfcHumedad_series_1_array, 0, sizeof(ui_gfcHumedad_series_1_array));
+            times_humedad_values_added = 0;
+        }
+        lv_chart_series_t * ui_gfcHumedad_series_1 = lv_chart_add_series(ui_gfcHumedad, lv_color_hex(0x808080),
+                                                                         LV_CHART_AXIS_PRIMARY_Y);
+        // Actualiza el gráfico con los nuevos valores
+        lv_chart_set_ext_y_array(ui_gfcHumedad, ui_gfcHumedad_series_1, ui_gfcHumedad_series_1_array);
     }
     Serial.println();
 }
@@ -128,6 +241,12 @@ void reconnect() {
         if (client.connect(clientID, mqtt_user, mqtt_password)) {
             Serial.println("conectado.");
             client.subscribe("sd/ventilador"); // Reemplazar con el nombre del tema
+            client.subscribe(MQTT_TOPIC_1);
+            client.subscribe(MQTT_TOPIC_2);
+            client.subscribe(MQTT_TOPIC_3);
+            client.subscribe(MQTT_TOPIC_4);
+            client.subscribe(MQTT_TOPIC_5);
+            client.subscribe(MQTT_TOPIC_6);
         } else {
             Serial.print("falló, rc=");
             Serial.print(client.state());
