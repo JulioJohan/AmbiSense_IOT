@@ -1,15 +1,33 @@
 #include <lvgl.h>
 #include <TFT_eSPI.h>
 #include <ui.h>
-
 #include <TFT_Touch.h>
+#include <WiFi.h>
+#include <PubSubClient.h>
+#include "ui_events.h"
+
+
+//Wifi setting
+const char* ssid = "POCO X3 Pro";
+const char* password = "12345678.";
+
+WiFiClient espClient;
+
+//MQTT
+const char* mqtt_server = "broker.hivemq.com";
+const int mqtt_port = 1883;
+const char* mqtt_user = "";
+const char* mqtt_password = "";
+const char* clientID = "";
+
+PubSubClient client(espClient);
 
 /*Change to your screen resolution*/
 static const uint16_t screenWidth  = 320;//480;
 static const uint16_t screenHeight = 240;//320;
 
 static lv_disp_draw_buf_t draw_buf;
-static lv_color_t buf[ screenWidth * screenHeight/4 ];
+static lv_color_t buf[ screenWidth * screenHeight/10 ];
 
 TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); /* TFT instance */
 
@@ -76,10 +94,55 @@ void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )
     }
 }
 
+void setup_wifi() {
+    delay(10);
+    Serial.println();
+    Serial.print("Conectando a ");
+    Serial.println(ssid);
+
+    WiFi.begin(ssid, password);
+
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+
+    Serial.println("");
+    Serial.println("Conectado a la red WiFi");
+    Serial.println("Dirección IP: " + WiFi.localIP().toString());
+}
+
+void callback(char* topic, byte* payload, unsigned int length) {
+    Serial.print("Mensaje recibido en el tema: ");
+    Serial.println("sd/ventilador");
+    Serial.print("Contenido del mensaje: ");
+    for (int i = 0; i < length; i++) {
+        Serial.print((char)payload[i]);
+    }
+    Serial.println();
+}
+
+void reconnect() {
+    while (!client.connected()) {
+        Serial.print("Intentando conexión MQTT...");
+        if (client.connect(clientID, mqtt_user, mqtt_password)) {
+            Serial.println("conectado.");
+            client.subscribe("sd/ventilador"); // Reemplazar con el nombre del tema
+        } else {
+            Serial.print("falló, rc=");
+            Serial.print(client.state());
+            Serial.println(" intentando de nuevo en 5 segundos.");
+            delay(5000);
+        }
+    }
+}
+
+
+
 void setup()
 {
     Serial.begin( 115200 ); /* prepare for possible serial debug */
-
+    //      
     String LVGL_Arduino = "Hello Arduino! ";
     LVGL_Arduino += String('V') + lv_version_major() + "." + lv_version_minor() + "." + lv_version_patch();
 
@@ -92,16 +155,9 @@ void setup()
     lv_log_register_print_cb( my_print ); /* register print function for debugging */
 #endif
 
-    tft.begin();          /* TFT init */
-    tft.setRotation(1);//( 3 ); /* Landscape orientation, flipped */
+    tft.begin();
+    tft.setRotation(1);
 
-    /*Set the touchscreen calibration data,
-     the actual data for your display can be acquired using
-     the Generic -> Touch_calibrate example from the TFT_eSPI library*/
-    //uint16_t calData[] = { 456, 3608, 469, 272, 3625, 3582, 3518, 263,  };
-//    tft.setTouchCalibrate(calData);//  
-//    uint16_t calData[5] = { 275, 3620, 264, 3532, 1 };
-//    tft.setTouch( calData );
     touch.setCal(526, 3443, 750, 3377, 320, 240, 1);
 
     lv_disp_draw_buf_init( &draw_buf, buf, NULL, screenWidth * 10 );
@@ -128,28 +184,36 @@ void setup()
     lv_obj_t *label = lv_label_create( lv_scr_act() );
     lv_label_set_text( label, LVGL_Arduino.c_str() );
     lv_obj_align( label, LV_ALIGN_CENTER, 0, 0 );
-#else
-    /* Try an example from the lv_examples Arduino library
-       make sure to include it as written above.
-    lv_example_btn_1();
-   */
-
-    // uncomment one of these demos
+#else  
+    setup_wifi();
+    client.setServer(mqtt_server, mqtt_port);
+    client.setCallback(callback);
     ui_init();
-            // OK
-    // lv_demo_benchmark();          // OK
-    // lv_demo_keypad_encoder();     // works, but I haven't an encoder
-    // lv_demo_music();              // NOK
-    // lv_demo_printer();
-    // lv_demo_stress();             // seems to be OK
+
 #endif
     Serial.println( "Setup done" );
 }
 
 void loop()
 {
+
+    if (!client.connected()) {
+        reconnect();
+    }
+    client.loop();
+
+    // Lectura de mensaje desde el monitor serial
+    if (Serial.available()) {
+        String mensaje = Serial.readStringUntil('\n');
+        mensaje.trim();
+        
+        // Publicar mensaje
+        if (mensaje.length() > 0) {
+            client.publish("sd/ventilador", mensaje.c_str());
+            Serial.println("Mensaje MQTT enviado: " + mensaje);
+        }
+    }
+
     lv_timer_handler(); /* let the GUI do its work */
     delay( 5 );
 }
-//http://lvgl.100ask.org/8.2/index.html
-//https://www.cnblogs.com/frozencandles/archive/2022/06/14/16375392.html
