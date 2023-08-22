@@ -151,7 +151,7 @@ https://github.com/JulioJohan/AmbiSense_IOT/tree/main/node_red_flogs/README.md
 ## Imagen del dashbord de los datos 
 ![image](https://github.com/JulioJohan/AmbiSense_IOT/assets/93070552/6c9c1429-d63e-4657-860f-b44e05194e0a)
 
-### El flow del sprint 2 de node red se encuentra [aqui!!](https://github.com/JulioJohan/AmbiSense_IOT/blob/main/FlowSprint%201.json)
+### El flow del sprint 2 de node red se encuentra [aqui!!](https://github.com/JulioJohan/AmbiSense_IOT/blob/main/Sprint%202.json)
 
 ## Base de datos 
 ![image](https://github.com/JulioJohan/AmbiSense_IOT/assets/93070552/b236ee9a-b81f-40d5-8c9c-3c260a38f973)
