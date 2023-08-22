@@ -1,0 +1,1269 @@
+[
+    {
+        "id": "235b856cf91d18fc",
+        "type": "tab",
+        "label": "Sprint 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1e24e92805508559",
+        "type": "mqtt in",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/temp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "9e956b52cc969f03",
+                "a5d4032d9ef819c4",
+                "d75ae02c0071e43c",
+                "7529e69e3cfd37d8"
+            ]
+        ]
+    },
+    {
+        "id": "9e956b52cc969f03",
+        "type": "ui_gauge",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "group": "4e81834cdfb70715",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 290,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5fb1e4c48a6f80c4",
+        "type": "mysql",
+        "z": "235b856cf91d18fc",
+        "mydb": "a3c9484d6e83d520",
+        "name": "",
+        "x": 450,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a5d4032d9ef819c4",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "func": "const valor= msg.payload\n\nmsg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(2,1, '\" + valor + \"')\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 100,
+        "wires": [
+            [
+                "5fb1e4c48a6f80c4"
+            ]
+        ]
+    },
+    {
+        "id": "d75ae02c0071e43c",
+        "type": "debug",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "7b3776a14df25970",
+        "type": "mqtt in",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/humedad",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 520,
+        "wires": [
+            [
+                "1aed42cc223a1527",
+                "0d3549fdad4c0a68",
+                "d0a30705ee7f6e18"
+            ]
+        ]
+    },
+    {
+        "id": "1aed42cc223a1527",
+        "type": "ui_gauge",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "group": "9a76a0db7c18f7be",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "100",
+        "colors": [
+            "#4deaff",
+            "#0082e6",
+            "#433acb"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 420,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "0d3549fdad4c0a68",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "func": "const valor= msg.payload\n\nmsg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(3,1, '\" + valor + \"')\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "dc5d6d1a972930fd"
+            ]
+        ]
+    },
+    {
+        "id": "3418d62276ee5b79",
+        "type": "mqtt in",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/pir",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 940,
+        "wires": [
+            [
+                "980f303318507978",
+                "a50bc064ef7f7c33"
+            ]
+        ]
+    },
+    {
+        "id": "980f303318507978",
+        "type": "debug",
+        "z": "235b856cf91d18fc",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "383c985875839376",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "SELECT",
+        "func": "msg.topic= \"SELECT * FROM sensor_data WHERE sensor='4';\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 1140,
+        "wires": [
+            [
+                "c9834beea0993d37"
+            ]
+        ]
+    },
+    {
+        "id": "a50bc064ef7f7c33",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "INSERT",
+        "func": "msg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(4,1,1)\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1000,
+        "wires": [
+            [
+                "b7a4e8476c15d061"
+            ]
+        ]
+    },
+    {
+        "id": "b7a4e8476c15d061",
+        "type": "mysql",
+        "z": "235b856cf91d18fc",
+        "mydb": "a3c9484d6e83d520",
+        "name": "Sensores",
+        "x": 600,
+        "y": 1040,
+        "wires": [
+            [
+                "1dc580718d02ecc6",
+                "383c985875839376",
+                "bcee79ae87a548a4"
+            ]
+        ]
+    },
+    {
+        "id": "1dc580718d02ecc6",
+        "type": "debug",
+        "z": "235b856cf91d18fc",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "f0fad2f18649f695",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "function 1",
+        "func": "//for (let index = 0; index < msg.payload.length; index++) {\n//    console.log(msg.payload[index]);\n//    \n//}\nmsg.payload = msg.payload.length;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1160,
+        "wires": [
+            [
+                "08341de6bf1628e4"
+            ]
+        ]
+    },
+    {
+        "id": "08341de6bf1628e4",
+        "type": "debug",
+        "z": "235b856cf91d18fc",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "c9834beea0993d37",
+        "type": "mysql",
+        "z": "235b856cf91d18fc",
+        "mydb": "a3c9484d6e83d520",
+        "name": "Sensores",
+        "x": 440,
+        "y": 1140,
+        "wires": [
+            [
+                "f0fad2f18649f695"
+            ]
+        ]
+    },
+    {
+        "id": "079c0f2692d0991d",
+        "type": "mqtt in",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/gas",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 1360,
+        "wires": [
+            [
+                "c490e0e9cc703036",
+                "d41bfd3980279020",
+                "45b4f4243b27e339"
+            ]
+        ]
+    },
+    {
+        "id": "c490e0e9cc703036",
+        "type": "debug",
+        "z": "235b856cf91d18fc",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "d41bfd3980279020",
+        "type": "ui_gauge",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "group": "29ebfa2e56bd573f",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "wave",
+        "title": "Gas",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 710,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "45b4f4243b27e339",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "INSERT",
+        "func": "msg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(9,1,1)\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1420,
+        "wires": [
+            [
+                "6be78959f2143b2c",
+                "b4e81e1cee08252a"
+            ]
+        ]
+    },
+    {
+        "id": "6be78959f2143b2c",
+        "type": "mysql",
+        "z": "235b856cf91d18fc",
+        "mydb": "a3c9484d6e83d520",
+        "name": "Sensores",
+        "x": 680,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b4e81e1cee08252a",
+        "type": "mqtt out",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/gas",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "048c66f73be3979c",
+        "x": 760,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "bcee79ae87a548a4",
+        "type": "mqtt out",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/pir",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "048c66f73be3979c",
+        "x": 840,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "7529e69e3cfd37d8",
+        "type": "ui_chart",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "group": "4e81834cdfb70715",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "label": "Grafico Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 520,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d0a30705ee7f6e18",
+        "type": "ui_chart",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "group": "9a76a0db7c18f7be",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "label": "Grafico Humedad",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 830,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dc5d6d1a972930fd",
+        "type": "mysql",
+        "z": "235b856cf91d18fc",
+        "mydb": "a3c9484d6e83d520",
+        "name": "",
+        "x": 610,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "528e7e9f3a3bcfeb",
+        "type": "mqtt out",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "sd/ventilador",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5db198805f821e04",
+        "x": 810,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "be4901a53729c333",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "function 19",
+        "func": "msg.payload=1;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 2320,
+        "wires": [
+            [
+                "528e7e9f3a3bcfeb"
+            ]
+        ]
+    },
+    {
+        "id": "87cf1abba445827a",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "function 20",
+        "func": "msg.payload=2\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 2440,
+        "wires": [
+            [
+                "528e7e9f3a3bcfeb"
+            ]
+        ]
+    },
+    {
+        "id": "0ce43e5e19eb8055",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "function 21",
+        "func": "msg.payload=3\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 2520,
+        "wires": [
+            [
+                "528e7e9f3a3bcfeb"
+            ]
+        ]
+    },
+    {
+        "id": "3d8290c169040b68",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "function 22",
+        "func": "msg.payload=4\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 2640,
+        "wires": [
+            [
+                "528e7e9f3a3bcfeb",
+                "417904744ef6613d"
+            ]
+        ]
+    },
+    {
+        "id": "c6f52ecbde3bcd77",
+        "type": "ui_switch",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "label": "Nivel Bajo",
+        "tooltip": "",
+        "group": "8f813f6d86d5c619",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 360,
+        "y": 2520,
+        "wires": [
+            [
+                "0ce43e5e19eb8055"
+            ]
+        ]
+    },
+    {
+        "id": "55c8455e4f127ade",
+        "type": "ui_switch",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "label": "Apagar",
+        "tooltip": "",
+        "group": "8f813f6d86d5c619",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 360,
+        "y": 2640,
+        "wires": [
+            [
+                "3d8290c169040b68"
+            ]
+        ]
+    },
+    {
+        "id": "0ba8a98201035b47",
+        "type": "ui_switch",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "label": "Nivel Medio",
+        "tooltip": "",
+        "group": "8f813f6d86d5c619",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 370,
+        "y": 2440,
+        "wires": [
+            [
+                "87cf1abba445827a"
+            ]
+        ]
+    },
+    {
+        "id": "9d05375d56955b23",
+        "type": "ui_switch",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "label": "Nivel Alto",
+        "tooltip": "",
+        "group": "8f813f6d86d5c619",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 340,
+        "y": 2320,
+        "wires": [
+            [
+                "be4901a53729c333"
+            ]
+        ]
+    },
+    {
+        "id": "b02ad1f7bdcec537",
+        "type": "mqtt in",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/sonido",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 1740,
+        "wires": [
+            [
+                "73a2bc1db3d27983",
+                "6a3097b3123f6752",
+                "e3b142167d337a8f"
+            ]
+        ]
+    },
+    {
+        "id": "73a2bc1db3d27983",
+        "type": "debug",
+        "z": "235b856cf91d18fc",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "e3b142167d337a8f",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "INSERT",
+        "func": "const valor= msg.payload\nmsg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(11,1,'\" + valor + \"')\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 1800,
+        "wires": [
+            [
+                "b55aea1371af49e6",
+                "9331b98c589d7979"
+            ]
+        ]
+    },
+    {
+        "id": "b55aea1371af49e6",
+        "type": "mysql",
+        "z": "235b856cf91d18fc",
+        "mydb": "a3c9484d6e83d520",
+        "name": "Sensores",
+        "x": 700,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9331b98c589d7979",
+        "type": "mqtt out",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/sonido",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "048c66f73be3979c",
+        "x": 790,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "7594888aa403533d",
+        "type": "mqtt in",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/fotoresistencia",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 2060,
+        "wires": [
+            [
+                "0c160d5523c37d76",
+                "b371d58cddac5599",
+                "1a5f9bf5e607aacb"
+            ]
+        ]
+    },
+    {
+        "id": "0c160d5523c37d76",
+        "type": "debug",
+        "z": "235b856cf91d18fc",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "1a5f9bf5e607aacb",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "INSERT",
+        "func": "const valor= msg.payload\nmsg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(10,1,'\" + valor + \"')\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 2120,
+        "wires": [
+            [
+                "7b7c3833e3c5b90f",
+                "56090fe2ec0b9db8"
+            ]
+        ]
+    },
+    {
+        "id": "7b7c3833e3c5b90f",
+        "type": "mysql",
+        "z": "235b856cf91d18fc",
+        "mydb": "a3c9484d6e83d520",
+        "name": "Sensores",
+        "x": 740,
+        "y": 2180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56090fe2ec0b9db8",
+        "type": "mqtt out",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "utng/fotoresistencia",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "048c66f73be3979c",
+        "x": 850,
+        "y": 2000,
+        "wires": []
+    },
+    {
+        "id": "6a3097b3123f6752",
+        "type": "ui_chart",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "group": "700d353c62e2cf04",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "label": "Grafico Sonido",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 780,
+        "y": 1780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b371d58cddac5599",
+        "type": "ui_chart",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "group": "a6a815b1949be791",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "label": "Grafico Luz",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "4095",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 2100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "417904744ef6613d",
+        "type": "debug",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 2660,
+        "wires": []
+    },
+    {
+        "id": "2e4a249f29a97a03",
+        "type": "mysql",
+        "z": "235b856cf91d18fc",
+        "mydb": "a3c9484d6e83d520",
+        "name": "",
+        "x": 250,
+        "y": 2580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f931428d186bc40",
+        "type": "function",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "func": "const valor= msg.payload\n\nmsg.topic = \"INSERT INTO sensor_data (sensor, user, value) \" +\n    \"VALUES(12,1, '\" + valor + \"')\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 100,
+        "y": 2580,
+        "wires": [
+            [
+                "2e4a249f29a97a03"
+            ]
+        ]
+    },
+    {
+        "id": "293b9e65753ca358",
+        "type": "mqtt in",
+        "z": "235b856cf91d18fc",
+        "name": "",
+        "topic": "sd/ventilador",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "5db198805f821e04",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 2720,
+        "wires": [
+            [
+                "7f931428d186bc40",
+                "417904744ef6613d"
+            ]
+        ]
+    },
+    {
+        "id": "5db198805f821e04",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4e81834cdfb70715",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "709542799f4da2f2",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a3c9484d6e83d520",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "db02",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "9a76a0db7c18f7be",
+        "type": "ui_group",
+        "name": "Humedad",
+        "tab": "709542799f4da2f2",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "29ebfa2e56bd573f",
+        "type": "ui_group",
+        "name": "Detector de gas",
+        "tab": "709542799f4da2f2",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "048c66f73be3979c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8f813f6d86d5c619",
+        "type": "ui_group",
+        "name": "Ventilador",
+        "tab": "709542799f4da2f2",
+        "order": 7,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "700d353c62e2cf04",
+        "type": "ui_group",
+        "name": "Detector de Sonido",
+        "tab": "709542799f4da2f2",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a6a815b1949be791",
+        "type": "ui_group",
+        "name": "Detector de Luz",
+        "tab": "709542799f4da2f2",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "709542799f4da2f2",
+        "type": "ui_tab",
+        "name": "Sprint 2",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]
