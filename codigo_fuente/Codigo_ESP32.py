@@ -42,7 +42,7 @@ MQTT_TOPIC_3 = "utng/temp"
 MQTT_TOPIC_4 = "utng/humedad"
 MQTT_TOPIC_5 = "utng/sonido"
 MQTT_TOPIC_6 = "utng/fotoresistencia"
-MQTT_TOPIC_7 = "utng/ventilador"
+MQTT_TOPIC_7 = "sd/ventilador"
 
 
 MQTT_PORT = 1883
@@ -182,7 +182,7 @@ def publish_tem(estado):
     client = MQTTClient(MQTT_CLIENT_ID, MQTT_BROKER, port=MQTT_PORT, user=MQTT_USER, password=MQTT_PASSWORD, keepalive=30)
     client.connect()
     print("[OK]")
-    client.publish(MQTT_TOPIC_6, str(estado))
+    client.publish(MQTT_TOPIC_7, str(estado))
     print("Ventilador a:", estado)
     client.disconnect()
     
