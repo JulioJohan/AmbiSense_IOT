@@ -138,7 +138,10 @@ https://drive.google.com/file/d/1rlZxnhoWY8SfxPz0AuGmdlDEthi9edXA/view?usp=shari
 
 # Prototipo Sprint 02
 ## Link del modelo 3D
+### Imagenes en drive
 https://drive.google.com/drive/folders/1T0H5iZNlcZtDxJmRIzmrZaTBnFTxkKrn?usp=sharing
+### Readme
+https://github.com/JulioJohan/AmbiSense_IOT/blob/main/prototipos_3d/README.md
 
 ## Imagenes del Prototipo
 https://github.com/JulioJohan/AmbiSense_IOT/blob/main/imagenes_prototipo/README.md
