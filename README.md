@@ -141,6 +141,7 @@ https://drive.google.com/file/d/1rlZxnhoWY8SfxPz0AuGmdlDEthi9edXA/view?usp=shari
 https://drive.google.com/drive/folders/1T0H5iZNlcZtDxJmRIzmrZaTBnFTxkKrn?usp=sharing
 
 ## Imagenes del Prototipo
+https://github.com/JulioJohan/AmbiSense_IOT/blob/main/imagenes_prototipo/README.md
 
 ## Imagen del Flow en Node Red
 
