@@ -1,1 +1,8 @@
-## Node red
+## Flows Node red
+-FLOW SENSOR TEMPERATURA Y HUMEDAD
+
+
+-FLOW SENSOR PIR
+
+
+-FLOW SENSOR MQ-2
