@@ -151,3 +151,4 @@ https://github.com/JulioJohan/AmbiSense_IOT/blob/main/imagenes_prototipo/README.
 
 
 ## Link del video de entrega
+https://drive.google.com/file/d/1WJI2lITewZES8Z6RfZoWGPJI87H_ZS8t/view?usp=drivesdk
