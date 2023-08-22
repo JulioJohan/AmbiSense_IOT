@@ -136,6 +136,9 @@ static uint8_t times_luz_values_added = 0;
 static lv_coord_t ui_gfcHumedad_series_1_array[MAX_VALUES];
 static uint8_t times_humedad_values_added = 0;
 
+static lv_coord_t ui_gfcGas_series_1_array[MAX_VALUES];
+static uint8_t times_gas_values_added = 0;
+
 void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print("Mensaje recibido en el tema: ");
     Serial.println("sd/ventilador");
@@ -227,6 +230,29 @@ void callback(char* topic, byte* payload, unsigned int length) {
                                                                          LV_CHART_AXIS_PRIMARY_Y);
         // Actualiza el gráfico con los nuevos valores
         lv_chart_set_ext_y_array(ui_gfcHumedad, ui_gfcHumedad_series_1, ui_gfcHumedad_series_1_array);
+    }else if(strcmp(topic, MQTT_TOPIC_2) == 0){
+        if(strcmp(mensaje, "1")==0){
+            lv_label_set_text(ui_ValorGas, "Gas detectado");
+        }else{
+            lv_label_set_text(ui_ValorGas, "Sin gas");
+        }
+        for (int i = 0; i < MAX_VALUES; i++) {
+            if (ui_gfcGas_series_1_array[i] == 0) {
+                ui_gfcGas_series_1_array[i] = atoi(mensaje);  // Suponiendo que el mensaje es numérico
+                break;  // Sal del bucle al agregar el valor
+            }
+        }
+        // Aumenta el contador de valores agregados
+        times_gas_values_added++;
+        // Cuando se agreguen 10 valores, limpia el array y reinicia el contador
+        if (times_gas_values_added >= MAX_VALUES_BEFORE_CLEAR) {
+            memset(ui_gfcGas_series_1_array, 0, sizeof(ui_gfcGas_series_1_array));
+            times_gas_values_added = 0;
+        }
+        lv_chart_series_t * ui_gfcGas_series_1 = lv_chart_add_series(ui_gfcGas, lv_color_hex(0x808080),
+                                                                         LV_CHART_AXIS_PRIMARY_Y);
+        // Actualiza el gráfico con los nuevos valores
+        lv_chart_set_ext_y_array(ui_gfcGas, ui_gfcGas_series_1, ui_gfcGas_series_1_array);        
     }
     Serial.println();
 }
